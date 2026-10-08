@@ -1,0 +1,356 @@
+/*
+ * Starter Demo - main stylesheet.
+ * Colors, fonts and sizes come from theme.json presets (var(--wp--preset--...)).
+ * Sections use the sd- prefix and match the files in /patterns.
+ */
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+.site-main {
+	min-height: 60vh;
+}
+
+.entry-content > :first-child {
+	margin-top: 0;
+}
+
+/* Remove the default gap between full-width sections. */
+.entry-content > .alignfull {
+	margin-block: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.wp-element-button,
+.wp-block-button__link {
+	transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link {
+	background: transparent;
+	color: inherit;
+	border: 2px solid currentColor;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: var(--wp--preset--color--white);
+	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.admin-bar .site-header {
+	top: 32px;
+}
+
+.site-header__inner {
+	max-width: 1200px;
+	margin-inline: auto;
+	padding: 18px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.site-header__logo {
+	font-size: 1.25rem;
+	font-weight: 800;
+	color: var(--wp--preset--color--dark);
+	text-decoration: none;
+	letter-spacing: -0.02em;
+}
+
+.site-header__menu {
+	display: flex;
+	gap: 28px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-header__menu a {
+	color: var(--wp--preset--color--dark);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.site-header__menu a:hover,
+.site-header__menu .current-menu-item > a {
+	color: var(--wp--preset--color--primary);
+}
+
+.site-header__burger {
+	display: none;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.site-header__burger span:first-child,
+.site-header__burger span:first-child::before,
+.site-header__burger span:first-child::after {
+	position: absolute;
+	left: 8px;
+	width: 24px;
+	height: 2px;
+	background: var(--wp--preset--color--dark);
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.site-header__burger span:first-child {
+	top: 19px;
+}
+
+.site-header__burger span:first-child::before,
+.site-header__burger span:first-child::after {
+	content: '';
+	left: 0;
+}
+
+.site-header__burger span:first-child::before {
+	top: -7px;
+}
+
+.site-header__burger span:first-child::after {
+	top: 7px;
+}
+
+@media (max-width: 782px) {
+	.admin-bar .site-header {
+		top: 46px;
+	}
+
+	.site-header__burger {
+		display: block;
+	}
+
+	.site-header__nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: var(--wp--preset--color--white);
+		border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+		padding: 8px 20px 20px;
+		display: none;
+	}
+
+	.site-header.is-open .site-header__nav {
+		display: block;
+	}
+
+	.site-header__menu {
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.site-header.is-open .site-header__burger span:first-child {
+		background: transparent;
+	}
+
+	.site-header.is-open .site-header__burger span:first-child::before {
+		transform: translateY(7px) rotate(45deg);
+	}
+
+	.site-header.is-open .site-header__burger span:first-child::after {
+		transform: translateY(-7px) rotate(-45deg);
+	}
+}
+
+/* ---------- Sections ---------- */
+
+.sd-hero,
+.sd-features,
+.sd-testimonials,
+.sd-cta,
+.sd-contact {
+	padding-block: clamp(64px, 10vw, 120px);
+}
+
+/* Hero */
+.sd-hero {
+	text-align: center;
+	background:
+		radial-gradient(circle at 20% 0%, rgba(79, 70, 229, 0.12), transparent 55%),
+		radial-gradient(circle at 90% 30%, rgba(245, 158, 11, 0.12), transparent 50%),
+		var(--wp--preset--color--light);
+}
+
+.sd-hero--small {
+	padding-block: clamp(48px, 7vw, 88px);
+}
+
+.sd-hero .wp-block-buttons {
+	justify-content: center;
+	margin-top: 32px;
+}
+
+.sd-eyebrow {
+	display: inline-block;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--primary);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.sd-lead {
+	color: var(--wp--preset--color--muted);
+	font-size: 1.25rem;
+}
+
+/* Cards (features, contact) */
+.sd-cards {
+	margin-top: 48px;
+	gap: 24px;
+}
+
+.sd-card {
+	padding: 32px;
+	border-radius: 20px;
+	background: var(--wp--preset--color--white);
+	border: 1px solid rgba(15, 23, 42, 0.08);
+	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sd-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.sd-card h3 {
+	margin-top: 0;
+	color: var(--wp--preset--color--primary);
+}
+
+/* Testimonials */
+.sd-testimonials {
+	background: var(--wp--preset--color--light);
+}
+
+.sd-testimonials .wp-block-columns {
+	margin-top: 40px;
+	gap: 24px;
+}
+
+.sd-quote {
+	height: 100%;
+	margin: 0;
+	padding: 32px;
+	border: 0;
+	border-radius: 20px;
+	background: var(--wp--preset--color--white);
+	font-size: 1.125rem;
+}
+
+.sd-quote cite {
+	display: block;
+	margin-top: 16px;
+	font-style: normal;
+	font-weight: 600;
+	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--muted);
+}
+
+/* Call to action */
+.sd-cta__box {
+	max-width: 1000px;
+	margin-inline: auto;
+	padding: clamp(40px, 6vw, 72px) 24px;
+	border-radius: 28px;
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--white);
+}
+
+.sd-cta__box h2 {
+	margin-top: 0;
+}
+
+.sd-cta__box .wp-block-button__link {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--primary);
+}
+
+/* ---------- Posts list ---------- */
+
+.post-teaser {
+	padding-block: 24px;
+	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+	background: var(--wp--preset--color--dark);
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.site-footer__inner {
+	max-width: 1200px;
+	margin-inline: auto;
+	padding: 32px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.site-footer__copy {
+	margin: 0;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.site-footer__menu {
+	display: flex;
+	gap: 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-footer__menu a {
+	color: var(--wp--preset--color--white);
+	text-decoration: none;
+}

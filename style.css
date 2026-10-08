@@ -1,0 +1,10 @@
+/*
+Theme Name: Starter Demo
+Description: Lightweight block-friendly theme. Global design lives in theme.json and assets/css, page sections are block patterns editable in the WordPress editor.
+Version: 1.0.0
+Requires at least: 6.6
+Requires PHP: 7.4
+Text Domain: starter-demo
+*/
+
+/* Real styles are in assets/css/main.css (enqueued in functions.php). */
