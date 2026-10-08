@@ -208,7 +208,7 @@ img {
 .sd-hero {
 	text-align: center;
 	background:
-		radial-gradient(circle at 20% 0%, rgba(79, 70, 229, 0.12), transparent 55%),
+		radial-gradient(circle at 20% 0%, rgba(22, 101, 52, 0.12), transparent 55%),
 		radial-gradient(circle at 90% 30%, rgba(245, 158, 11, 0.12), transparent 50%),
 		var(--wp--preset--color--light);
 }

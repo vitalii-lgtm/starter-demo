@@ -11,7 +11,7 @@
 		"color": {
 			"defaultPalette": false,
 			"palette": [
-				{ "slug": "primary", "name": "Primary", "color": "#4F46E5" },
+				{ "slug": "primary", "name": "Primary", "color": "#166534" },
 				{ "slug": "accent", "name": "Accent", "color": "#F59E0B" },
 				{ "slug": "dark", "name": "Dark", "color": "#0F172A" },
 				{ "slug": "muted", "name": "Muted", "color": "#64748B" },
