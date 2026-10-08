@@ -55,9 +55,14 @@ img {
 	transform: translateY(-2px);
 }
 
+/* Darker red on hover for filled buttons */
+.wp-block-button:not(.is-style-outline) > .wp-block-button__link:hover {
+	background-color: #B91C1C;
+}
+
 .wp-block-button.is-style-outline > .wp-block-button__link {
 	background: transparent;
-	color: inherit;
+	color: var(--wp--preset--color--red);
 	border: 2px solid currentColor;
 }
 
@@ -308,8 +313,8 @@ img {
 }
 
 .sd-cta__box .wp-block-button__link {
-	background: var(--wp--preset--color--white);
-	color: var(--wp--preset--color--primary);
+	background: var(--wp--preset--color--red);
+	color: var(--wp--preset--color--white);
 }
 
 /* ---------- Posts list ---------- */

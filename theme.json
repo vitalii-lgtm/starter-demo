@@ -13,6 +13,7 @@
 			"palette": [
 				{ "slug": "primary", "name": "Primary", "color": "#166534" },
 				{ "slug": "accent", "name": "Accent", "color": "#F59E0B" },
+				{ "slug": "red", "name": "Red", "color": "#DC2626" },
 				{ "slug": "dark", "name": "Dark", "color": "#0F172A" },
 				{ "slug": "muted", "name": "Muted", "color": "#64748B" },
 				{ "slug": "light", "name": "Light", "color": "#F1F5F9" },
@@ -68,7 +69,7 @@
 			"h3": { "typography": { "fontSize": "var(--wp--preset--font-size--large)" } },
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--primary)",
+					"background": "var(--wp--preset--color--red)",
 					"text": "var(--wp--preset--color--white)"
 				},
 				"border": { "radius": "999px" },
